@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@font-face {
+    font-family: time;
+    src: url(./Font/Ds-DIGIT_BOLD.TTF);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Lora", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0px;
+    position: relative;
+}
+:root {
+    --primary-color: #111111;
+    --secondry-color: rgb(230, 222, 222);
+    --content-color: #001f61;
+    --time-color: red;
+    --date-color: var(--content-color);
+}
+html {
+    transition: all 0.5s ease-in;
+}
+html.dark {
+    --primary-color: rgb(230, 222, 222);
+    --secondry-color: #111111;
+    --date-color: rgb(230, 222, 222);
+}
+
+html.dark {
+    background-color: var(--secondry-color);
+    color: var(--primary-color);
+}
+.btn {
+    border-radius: 26.5px;
+    background-color: var(--content-color);
+    border: 1px solid var(--content-color);
+    box-shadow: 0 16px 22px -17px #03153b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 12px 20px;
+    z-index: 999;
+    position: fixed;
+    top: 20px;
+}
+.btn:hover {
+    background-color: #ffffff;
+    color: var(--content-color);
+}
+.btn:focus {
+    outline-style: none;
+}
+.clock-container {
+    text-align: center;
+}
+.clock {
+    position: relative;
+    height: 240px;
+    width: 240px;
+    box-shadow: 0 16px 22px -17px #03153b;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.nidale {
+    background-color: var(--secondry-color);
+    color: var(--secondry-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 110px;
+    width: 3px;
+    transform-origin: bottom center;
+    border-radius: 20%;
+    transition: all 0.5 ease-in;
+}
+.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 80px;
+    width: 5px;
+}
+.min {
+    transform: translate(-50%, -100%) rotate(90deg);
+}
+.sec {
+    transform: translate(-50%, -100%) rotate(60deg);
+    background-color: var(--time-color);
+}
+
+.circle {
+    height: 15px;
+    width: 15px;
+    background-color: var(--time-color);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    position: relative;
+}
+
+.dot {
+    background-color: var(--secondry-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+}
+
+.time {
+    margin-top: 30px;
+    font-family: time;
+    font-size: 60px;
+    letter-spacing: -4px;
+    color: var(--time-color);
+}
+
+.date {
+    font-size: 20px;
+    font-family: time;
+    color: var(--date-color);
+    padding: 5px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* SOCIAL PANEL CSS */
+.social-panel-container {
+    position: fixed;
+    right: 0;
+    bottom: 80px;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.social-panel-container.visible {
+    transform: translateX(-10px);
+}
+
+.social-panel {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 16px 31px -17px rgba(0, 31, 97, 0.6);
+    border: 5px solid var(--content-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Muli";
+    position: relative;
+    height: 169px;
+    width: 370px;
+    max-width: calc(100% - 10px);
+}
+
+.social-panel button.close-btn {
+    border: 0;
+    color: #97a5ce;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.social-panel button.close-btn:focus {
+    outline: none;
+}
+
+.social-panel p {
+    background-color: var(--content-color);
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 2px 17px 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 235px;
+}
+
+.social-panel p i {
+    margin: 0 5px;
+}
+
+.social-panel p a {
+    color: #ff7500;
+    text-decoration: none;
+}
+
+.social-panel h4 {
+    margin: 20px 0;
+    color: #97a5ce;
+    font-family: "Muli";
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+.social-panel ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-panel ul li {
+    margin: 0 10px;
+}
+
+.social-panel ul li a {
+    border: 1px solid #dce1f2;
+    border-radius: 50%;
+    color: var(--content-color);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+}
+
+.social-panel ul li a:hover {
+    border-color: #ff6a00;
+    box-shadow: 0 9px 12px -9px #ff6a00;
+}
+
+.floating-btn {
+    border-radius: 26.5px;
+    background-color: var(--content-color);
+    border: 1px solid var(--content-color);
+    box-shadow: 0 16px 22px -17px #03153b;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 12px 20px;
+    /* position: fixed; */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.floating-btn:hover {
+    background-color: #ffffff;
+    color: var(--content-color);
+}
+
+.floating-btn:focus {
+    outline: none;
+}
+
+.floating-text {
+    background-color: var(--content-color);
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-family: "Muli";
+    padding: 7px 15px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-text a {
+    color: #ff7500;
+    text-decoration: none;
+}
+
+.copy-text {
+    color: #b3b0b0;
+    padding-top: 0;
+}
+
+.resize {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 480px) {
+    .clock {
+        height: 210px;
+        width: 210px;
+        position: absolute;
+        top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nidale {
+        background-color: var(--secondry-color);
+        color: var(--secondry-color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 90px;
+        width: 3px;
+        transform-origin: bottom center;
+        border-radius: 20%;
+        transition: all 0.5 ease-in;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .time {
+        margin-top: 100px;
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+    
+    .date {
+        font-size: 18px;
+    }
+    
+    .hour {
+        height: 60px;
+        width: 5px;
+    }
+
+    .sec {
+        transform: translate(-50%, -100%) rotate(60deg);
+        background-color: var(--time-color);
+    }
+
+    .social-panel-container.visible {
+        transform: translateX(0px);
+    }
+
+    .social-panel-container {
+        height: 169px;
+        width: 300px;
+    }
+
+    .social-panel p {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 2px 12px 6px;
+        width: 205px;
+    }
+
+    .social-panel ul li a {
+        font-size: 14px;
+        height: 30px;
+        width: 30px;
+        text-decoration: none;
+    }
+
+    .floating-btn {
+        bottom: 80px;
+        right: 50%;
+        position: absolute
+    }
+
+    .resize {
+        display: flex;
+        flex-direction: column;
+    }
+}
